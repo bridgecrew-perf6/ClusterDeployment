@@ -18,7 +18,7 @@ module "db" {
   # NOTE: Do NOT use 'user' as the value for 'username' as it throws:
   # "Error creating DB Instance: InvalidParameterValue: MasterUsername
   # user cannot be used as it is a reserved word used by the engine"
-  db_name  = "team-aqua-db"
+  db_name  = "bubbledb"
   username = var.db_username
   password = var.db_password
   port     = 5432
@@ -28,7 +28,7 @@ module "db" {
 
   maintenance_window      = "Mon:00:00-Mon:03:00"
   backup_window           = "03:00-06:00"
-  backup_retention_period = 0
+  backup_retention_period = 2
 
   tags = local.tags
 }

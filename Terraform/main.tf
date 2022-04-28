@@ -47,11 +47,14 @@ locals {
 }
 
 resource "aws_iam_user" "archie" {
-  name = "archieAqua"
+  name = "220307-kevin-sre-team-aqua"
   path = "/"
 
   tags = {
-    team = "aqua"
+    "Team"         = "Aqua"
+    "Created By"   = "Terraform"
+    "Created On"   = "4/28/22"
+    "Delete After" = "5/16/22"
   }
 }
 
@@ -59,13 +62,28 @@ resource "aws_iam_access_key" "archieKey" {
   user = aws_iam_user.archie.name
 }
 
+resource "aws_iam_user_policy" "eks" {
+  name = "cluster-access"
+  user = aws_iam_user.archie.name
+
+  # Terraform's "jsonencode" function converts a
+  # Terraform expression result to valid JSON syntax.
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "eks:AccessKubernetesApi",
+          "eks:DescribeCluster"
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+}
+
 resource "random_string" "suffix" {
   length  = 8
   special = false
-}
-
-resource "aws_default_vpc" "default" {
-  tags = {
-    Name = "Default VPC"
-  }
 }
