@@ -10,18 +10,6 @@ variable "region" {
   default     = "us-east-1"
 }
 
-variable "iam_id" {
-  description = "IAM access key ID"
-  type        = string
-  sensitive   = true
-}
-
-variable "iam_secret" {
-  description = "IAM secret access key"
-  type        = string
-  sensitive   = true
-}
-
 variable "db_username" {
   description = "Database administrator username"
   type        = string

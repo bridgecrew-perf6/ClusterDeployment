@@ -46,6 +46,19 @@ locals {
   }
 }
 
+resource "aws_iam_user" "archie" {
+  name = "archieAqua"
+  path = "/"
+
+  tags = {
+    team = "aqua"
+  }
+}
+
+resource "aws_iam_access_key" "archieKey" {
+  user = aws_iam_user.archie.name
+}
+
 resource "random_string" "suffix" {
   length  = 8
   special = false
