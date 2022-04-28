@@ -38,7 +38,7 @@ locals {
 }
 
 locals {
-  name = "rev-team-aqua-postgresql"
+  name   = "rev-team-aqua-postgresql"
   region = var.region
   tags = {
     Owner       = "user"

@@ -23,8 +23,8 @@ resource "aws_security_group" "allow_tls" {
 }
 
 module "postgresql_security_group" {
-  source  = "terraform-aws-module/security-group/aws"
-  version = "~> 4.9.0"
+  source  = "terraform-aws-modules/security-group/aws//modules/postgresql"
+  version = "~> 4.0"
 
   name        = local.name
   description = "PostgreSQL security group"

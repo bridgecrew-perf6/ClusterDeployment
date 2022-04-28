@@ -1,7 +1,7 @@
-module "db_default" {
-  source = "../../"
+module "db" {
+  source = "terraform-aws-modules/rds/aws"
 
-  identifier = "${local.name}-default"
+  identifier = "${local.name}-db"
 
   create_db_option_group    = false
   create_db_parameter_group = false
@@ -18,12 +18,13 @@ module "db_default" {
   # NOTE: Do NOT use 'user' as the value for 'username' as it throws:
   # "Error creating DB Instance: InvalidParameterValue: MasterUsername
   # user cannot be used as it is a reserved word used by the engine"
-  db_name  = "Team_Aqua_postgresql"
-  username = "complete_postgresql"
+  db_name  = "team-aqua-db"
+  username = var.db_username
+  password = var.db_password
   port     = 5432
 
   db_subnet_group_name   = module.vpc.database_subnet_group
-  vpc_security_group_ids = [module.security_group.security_group_id]
+  vpc_security_group_ids = [module.postgresql_security_group.security_group_id]
 
   maintenance_window      = "Mon:00:00-Mon:03:00"
   backup_window           = "03:00-06:00"
