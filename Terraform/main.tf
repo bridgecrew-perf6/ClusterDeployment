@@ -37,6 +37,15 @@ locals {
   cluster_version = "1.22"
 }
 
+locals {
+  name = "rev-team-aqua-postgresql"
+  region = var.region
+  tags = {
+    Owner       = "user"
+    Environment = "dev"
+  }
+}
+
 resource "random_string" "suffix" {
   length  = 8
   special = false
