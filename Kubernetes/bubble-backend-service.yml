@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bubble-backend-service
+  namespace: team-aqua
+  labels:
+    app: bubble-backend
+spec:
+  selector:
+    app: bubble-backend
+  ports:
+  - port: 5000
+    targetPort: 5000
+    protocol: TCP
+    name: http
