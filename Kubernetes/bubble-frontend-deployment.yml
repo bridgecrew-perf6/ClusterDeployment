@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bubble-frontend-deployment
+  namespace: team-aqua
+  labels: 
+    name: bubble-frontend
+spec:
+  selector:
+    matchLabels:
+      app: bubble-frontend
+  template:
+    metadata:
+      labels:
+        app: bubble-frontend
+    spec:
+      containers:
+      - name: bubble-frontend-container
+        image: fentrymartin7/project3:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+      - name: angular-container
+        image: portainer/angular-builder:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m" 
+        ports:
+        - containerPort: 8080
