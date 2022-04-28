@@ -12,14 +12,14 @@ variable "region" {
 
 variable "iam_id" {
   description = "IAM access key ID"
-  type = string
-  sensitive = true
+  type        = string
+  sensitive   = true
 }
 
 variable "iam_secret" {
   description = "IAM secret access key"
-  type = string
-  sensitive = true
+  type        = string
+  sensitive   = true
 }
 
 variable "db_username" {

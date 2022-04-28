@@ -21,3 +21,24 @@ resource "aws_security_group" "allow_tls" {
     Name = "allow_tls"
   }
 }
+
+module "postgresql_security_group" {
+  source  = "terraform-aws-modules/security-group/aws//modules/postgresql"
+  version = "~> 4.0"
+
+  name        = local.name
+  description = "PostgreSQL security group"
+  vpc_id      = module.vpc.vpc_id
+
+  ingress_with_cidr_blocks = [
+    {
+      from_port   = 5432
+      to_port     = 5432
+      protocol    = "tcp"
+      description = "PostgreSQL access from within VPC"
+      cidr_blocks = module.vpc.vpc_cidr_block
+    },
+  ]
+
+  tags = local.tags
+}
