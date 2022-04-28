@@ -2,6 +2,8 @@
 *.tfvars
 *.tfstate
 
+*.vs
+
 target/
 pom.xml.tag
 pom.xml.releaseBackup
