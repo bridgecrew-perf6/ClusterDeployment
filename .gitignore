@@ -1,3 +1,7 @@
+.terraform
+*.tfvars
+*.tfstate
+
 target/
 pom.xml.tag
 pom.xml.releaseBackup
