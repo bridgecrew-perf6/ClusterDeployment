@@ -2,7 +2,7 @@
 Incident Management Report template
 ===================================
 
-**Incident summary:**
+#**Incident summary:**
 
 _*Write a summary of the incident in a few sentences. Include what happened, why, the severity of the incident and how long the impact lasted._
 
@@ -29,12 +29,10 @@ This {SEVERITY LEVEL} incident affected {X%} of users.
 
 
 There was further impact as noted by {e.g. NUMBER OF SUPPORT TICKETS SUBMITTED, SOCIAL MEDIA MENTIONS, CALLS TO ACCOUNT MANAGERS} were raised in relation to this incident.
-
+***
   
 
-  
-
-**Leadup:**
+#**Leadup:**
 
 _*Describe the sequence of events that led to the incident, for example, previous changes that introduced bugs that had not yet been detected._
 
@@ -44,7 +42,9 @@ At {16:00} on {MM/DD/YY}, ({AMOUNT OF TIME BEFORE CUSTOMER IMPACT, e.g. 10 days 
 
 This change resulted in  {DESCRIPTION OF THE IMPACT OF THE CHANGE}.
 
-**Fault:**
+***
+
+#**Fault:**
 
 _*Describe how the change that was implemented didn't work as expected. If available, attach screenshots of relevant data visualizations that illustrate the fault._
 
@@ -52,8 +52,8 @@ TEMPLATE-
 
 {NUMBER} responses were sent in error to {XX%} of requests. This went on for {TIME PERIOD}.
 
-  
-**Impact:**
+***  
+#**Impact:**
 
 _*Describe how the incident impacted internal and external users during the incident. Include how many support cases were raised._
 
