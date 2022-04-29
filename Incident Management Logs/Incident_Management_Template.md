@@ -2,13 +2,13 @@
 Incident Management Report template
 ===================================
 
-#**Incident summary:**
+# **Incident summary:**
 
 _*Write a summary of the incident in a few sentences. Include what happened, why, the severity of the incident and how long the impact lasted._
 
   
 
-TEMPLATE-
+**TEMPLATE**
 
 Between the hour of {time range of incident, e.g. 15:45 and 16:35} on {DATE}, {NUMBER} users encountered {EVENT SYMPTOMS}.
 
@@ -32,11 +32,11 @@ There was further impact as noted by {e.g. NUMBER OF SUPPORT TICKETS SUBMITTED, 
 ***
   
 
-#**Leadup:**
+# **Leadup:**
 
 _*Describe the sequence of events that led to the incident, for example, previous changes that introduced bugs that had not yet been detected._
 
-TEMPLATE-
+**TEMPLATE**
 
 At {16:00} on {MM/DD/YY}, ({AMOUNT OF TIME BEFORE CUSTOMER IMPACT, e.g. 10 days before the incident in question}), a change was introduced to {PRODUCT OR SERVICE}  in order to {THE CHANGES THAT LED TO THE INCIDENT}.
 
@@ -44,11 +44,11 @@ This change resulted in  {DESCRIPTION OF THE IMPACT OF THE CHANGE}.
 
 ***
 
-#**Fault:**
+# **Fault:**
 
 _*Describe how the change that was implemented didn't work as expected. If available, attach screenshots of relevant data visualizations that illustrate the fault._
 
-TEMPLATE-
+**TEMPLATE**
 
 {NUMBER} responses were sent in error to {XX%} of requests. This went on for {TIME PERIOD}.
 
@@ -57,7 +57,7 @@ TEMPLATE-
 
 _*Describe how the incident impacted internal and external users during the incident. Include how many support cases were raised._
 
-TEMPLATE-
+**TEMPLATE**
 
 For {XXhrs XX minutes} between {XX:XX UTC and XX:XX UTC} on {MM/DD/YY}, {SUMMARY OF INCIDENT} our users experienced this incident.  
 
@@ -65,13 +65,13 @@ This incident affected {XX} customers (X% OF {SYSTEM OR SERVICE} USERS), who exp
 
 {XX NUMBER OF SUPPORT TICKETS AND XX NUMBER OF SOCIAL MEDIA POSTS} were submitted.
 
-
-**Detection:**
+***
+# **Detection:**
 
 _*When did the team detect the incident? How did they know it was happening? How could we improve time-to-detection? Consider: How would we have cut that time by half?_
 
 
-TEMPLATE-
+**TEMPLATE**
 
 This incident was detected when the {ALERT TYPE} was triggered and {TEAM/PERSON} were paged.
 
@@ -79,27 +79,27 @@ Next, {SECONDARY PERSON} was paged, because {FIRST PERSON} didn't own the servic
 
 {DESCRIBE THE IMPROVEMENT} will be set up by {TEAM OWNER OF THE IMPROVEMENT} so that {EXPECTED IMPROVEMENT}.
 
-  
-**Response:**
+***  
+# **Response:**
 
 _*Who responded to the incident? When did they respond, and what did they do? Note any delays or obstacles to responding._
 
 
-TEMPLATE-
+**TEMPLATE**
 
 After receiving a page at {XX:XX UTC}, {ON-CALL ENGINEER} came online at {XX:XX UTC} in {SYSTEM WHERE INCIDENT INFO IS CAPTURED}.
 
 This engineer did not have a background in the {AFFECTED SYSTEM} so a second alert was sent at {XX:XX UTC} to {ESCALATIONS ON-CALL ENGINEER} into the who came into the room at {XX:XX UTC}.
 
-
-**Recovery:**
+***
+# **Recovery:**
 
 _*Describe how the service was restored and the incident was deemed over. Detail how the service was successfully restored and you knew how what steps you needed to take to recovery._
 
 _*Depending on the scenario, consider these questions: How could you improve time to mitigation? How could you have cut that time by half?_
 
 
-TEMPLATE-
+**TEMPLATE**
 
 We used a three-pronged approach to the recovery of the system:
 
@@ -113,8 +113,8 @@ Disabled the Escalator autoscaler to prevent the cluster from aggressively scali
 
 Reverting the Build Engineering scheduler to the previous version.
 
-
-**Timeline:**
+***
+# **Timeline:**
 
 _*Detail the incident timeline. We recommend using UTC to standardize for timezones._
 
@@ -129,7 +129,7 @@ XX:XX UTC - INCIDENT ACTIVITY; ACTION TAKEN
 XX:XX UTC - INCIDENT ACTIVITY; ACTION TAKEN
 
 
-EXAMPLE:
+EXAMPLE-
 
 All times are UTC.
 
@@ -159,8 +159,8 @@ All times are UTC.
 
 16:40 - KITT confirms ASG is stable, cluster load is normal and customer impact resolved.
 
-  
-**Root cause identification: The Five Whys:**
+***
+# **Root cause identification: The Five Whys:**
 
 The Five Whys is a root cause identification technique. Here’s how you can use it:
 _*Begin with a description of the impact and ask why it occurred._
@@ -186,8 +186,8 @@ Because we don't have a development process established for load testing changes
 
 Because we never felt load testing was necessary until we reached this level of scale.
 
-  
-**Root cause:**
+***  
+# **Root cause:**
 
 _*Note the final root cause of the incident, the thing identified that needs to change in order to prevent this class of incident from happening again._
 
@@ -195,8 +195,8 @@ EXAMPLE:
 
 A bug in connection pool handling led to leaked connections under failure conditions, combined with lack of visibility into connection state.
 
-
-**Backlog check:**
+***
+# **Backlog check:**
 
 _*Review your engineering backlog to find out if there was any unplanned work there that could have prevented this incident, or at least reduced its impact?_
 
@@ -204,8 +204,8 @@ EXAMPLE:
 
 No specific items in the backlog that could have improved this service. There is a note about improvements to flow typing, and these were ongoing tasks with workflows in place. 
 
-  
-**Recurrence:**
+*** 
+# **Recurrence:**
 
 _*Now that you know the root cause, can you look back and see any other incidents that could have the same root cause? If yes, note what mitigation was attempted in those incidents and ask why this incident occurred again._ 
 
@@ -213,9 +213,8 @@ EXAMPLE:
 
 This same root cause resulted in incidents HOT-13432, HOT-14932 and HOT-19452.
 
-  
-
-**Lessons learned:**
+***
+# **Lessons learned:**
 
 _*Discuss what went well in the incident response, what could have been improved, and where there are opportunities for improvement._
 
@@ -228,8 +227,8 @@ EXAMPLE:
 -Bulk ops should start slowly and monitored, increasing when service metrics appear nominal
 
   
-
-**Corrective actions:**
+***
+# **Corrective actions:**
 
 _*Describe the corrective action ordered to prevent this class of incident in the future. Note who is responsible and when they have to complete the work and where that work is being tracked._
 
@@ -240,3 +239,4 @@ EXAMPLE:
 -Unit test and re-introduction of job rate limiting
 
 -Introduction of a secondary mechanism to collect distributed rate information across cluster to guide scaling effects
+***
