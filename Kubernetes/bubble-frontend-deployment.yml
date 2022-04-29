@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: bubble-frontend-deployment
-  namespace: team-aqua
   labels: 
     name: bubble-frontend
 spec:
