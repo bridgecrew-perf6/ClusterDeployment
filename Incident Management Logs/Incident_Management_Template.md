@@ -53,7 +53,7 @@ TEMPLATE-
 {NUMBER} responses were sent in error to {XX%} of requests. This went on for {TIME PERIOD}.
 
 ***  
-**#Impact:**
+# **Impact:**
 
 _*Describe how the incident impacted internal and external users during the incident. Include how many support cases were raised._
 
