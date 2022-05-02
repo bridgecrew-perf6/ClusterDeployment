@@ -5,7 +5,8 @@
 AQUA BUBBLE MONITORING
 
 
-##Project Description
+## Project Description
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
 Bubble is a social media website which allows users, who sign-up for free profiles, to connect with their friends, new and old, online. It allows users to share pictures, videos and posts as well as joining groups and exchanging their thoughts in those group or on their profile. Functionalities of this website were created by three previous cohort. The second cohort, which specialized in java Full stack GCP, was in charge of creating more functionalities to improve users satisfaction and perfect their interactions. The third cohort focused on adding extra MVPs and user stories.
