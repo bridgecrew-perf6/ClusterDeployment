@@ -22,12 +22,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   * Install the CLI using the npm package manager:
      > npm install -g @angular/cli@12
 * AWS RDS
-   * Fleshhhhhh ~~~~ this out please.
-   * Postgres Pod configiuration
-      >
+   * Created through Terraform Script, please reference the Terraform directory//RDS to view the required specs
 * EC2/EKS cluster
-   * Create a
-      >
+   * Created through Terraform Script, please reference the Terraform directory//EKS to view the required specs
+      
 
 ## Development server
 Preparing terminal environment
