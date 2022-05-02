@@ -4,8 +4,7 @@ Repo for any/all files related to deploying Bubble3 to the cloud cluster, includ
 
 ## Who are we?
 
-Team Aqua is...cool I guess...
-*Write something snazzy here Ayan plz*
+Team Aqua is a diverse group of training SREs who joined together to take on the challenge of deploying Bubble 3 using Terraform. They engaged in a friendly race to get their application hosted and monitored before Team Magma launched a disruption attack on their API. Together, with the help of monitoring technologies like Prometheus and Loki, Team Aqua diagnosed the health of their API and brought it back to a production ready deployment.
 
 ## How do I work on this project?
 
