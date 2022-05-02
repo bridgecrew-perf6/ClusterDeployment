@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: bubble-frontend-deployment
   labels: 
-    name: bubble-frontend
+    app: bubble-frontend
 spec:
   selector:
     matchLabels:
@@ -15,16 +15,9 @@ spec:
     spec:
       containers:
       - name: bubble-frontend-container
-        image: fentrymartin7/project3:latest
+        image: archieaqua/bubble-f:latest
         resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-      - name: angular-container
-        image: portainer/angular-builder:latest
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m" 
+          limits: 
+            memory: "512Mi" 
         ports:
-        - containerPort: 8080
+        - containerPort: 80
