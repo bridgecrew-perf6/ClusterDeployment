@@ -1,9 +1,16 @@
 # Bubble Startup Documentation
 
+## Project Name
+
+AQUA BUBBLE MONITORING
 
 
+##Project Description
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
+Bubble is a social media website which allows users, who sign-up for free profiles, to connect with their friends, new and old, online. It allows users to share pictures, videos and posts as well as joining groups and exchanging their thoughts in those group or on their profile. Functionalities of this website were created by three previous cohort. The second cohort, which specialized in java Full stack GCP, was in charge of creating more functionalities to improve users satisfaction and perfect their interactions. The third cohort focused on adding extra MVPs and user stories.
+
+Enter the 4th generation of Bubble. This latest generation implements SRE practices, including defining SLOs, monitoring metrics, and building a CI/CD pipeline. In addition to hosting and tetsing the previously made Bubble application, the SRE batch streamlined the app to be available for constant monitoring and updating. This generation also involved a twist in which another team (Team Magma) disrupted the Aqua Bubble Monitoring app. This readme details the technologies used in order for Team Aqua to diagnose issues with their application and restore it back to health.
 
 
 ## Installation
