@@ -58,5 +58,5 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: bubble-secret
-                key: email-pass
+                key: email-password
 
