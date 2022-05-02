@@ -3,6 +3,7 @@
 *.tfstate
 
 *.vs
+secret.yml
 
 target/
 pom.xml.tag
