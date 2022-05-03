@@ -35,7 +35,37 @@ Enter the 4th generation of Bubble. This latest generation implements SRE practi
       >
 * EC2/EKS cluster
    * Create a
-      >
+
+* Helm Repo/Chart installation:
+* Prometheus-
+* Repo: helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+* Chart: helm install my-prometheus prometheus-community/prometheus --version 15.8.5
+ > Configurations:
+ >  metadata:
+   > annotations:
+    > prometheus.io/scrape: "true"
+    > prometheus.io/path: *application pod serving metrics*
+    > prometheus.io/port: "8080"
+* Metrics API(K8's)
+* Prometheus Adapter
+  * repo: helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+* helm repo update
+  * chart: helm install [RELEASE_NAME] prometheus-community/prometheus-adapter
+* Metrics Server
+  * repo: helm repo add metrics-server https://kubernetes-sigs.github.io/metrics-server/
+  * Chart: helm upgrade --install metrics-server metrics-server/metrics-server
+* Import Paths:
+	* Custom Metrics API: k8s.io/metrics/pkg/apis/custom_metrics
+	* Resource Metrics API: k8s.io/metrics/pkg/apis/metrics
+* Grafana
+  * repo: helm repo add grafana https://grafana.github.io/helm-charts
+* helm repo update
+  * Chart: helm install my-release grafana/grafana
+* Loki
+  * chart: helm upgrade --install loki grafana/loki
+* Promtail
+  * chart: helm repo add grafana https://grafana.github.io/helm-charts
+
 
 ## Development server
 Preparing terminal environment
