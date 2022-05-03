@@ -38,7 +38,7 @@ Enter the 4th generation of Bubble. This latest generation implements SRE practi
 
 * Helm Repo/Chart installation:
 * Prometheus-
-* Repo: helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+ >  Repo: helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 * Chart: helm install my-prometheus prometheus-community/prometheus --version 15.8.5
  > Configurations:
  >  metadata:
