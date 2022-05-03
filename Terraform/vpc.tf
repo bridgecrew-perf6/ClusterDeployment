@@ -28,4 +28,20 @@ module "vpc" {
     "kubernetes.io/cluster/${local.cluster_name}" = "shared"
     "kubernetes.io/role/internal-elb"             = "1"
   }
+
+  /****************************************************************************************************
+   *******************************Jorge modification #1************************************************
+   ****************************************************************************************************
+   ******I think that we were missing the method below, because to run a resource within a network,****
+   *****you need to assign a public subnet ip/mask in order for the resource to be available within****
+   *****the network. In this case, I might be wrong, but I think the database needs reference tags*****
+   *****in order to be referenced by the application. The thing is, to find where the subnets**********
+   *****are referenced within the application**********************************************************
+   ****************************************************************************************************
+  */
+  database_subnets_tags = {
+    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
+    "kubernetes.io/role/elb"                      = "1"
+  }
+  
 }
