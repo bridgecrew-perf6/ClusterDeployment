@@ -26,7 +26,7 @@ terraform {
   required_version = ">= 0.14.9"
 }
 
-data "aws_availability_zones" "available" {}
+// data "aws_availability_zones" "available" {}
 
 provider "aws" {
   region = var.region
@@ -47,7 +47,7 @@ locals {
 }
 
 resource "aws_iam_user" "archie" {
-  name = "220307-kevin-sre-team-aqua"
+  name = "220307-kevin-sre-team-aqua" //Need to take a look at the AWS GUI.
   path = "/"
 
   tags = {
