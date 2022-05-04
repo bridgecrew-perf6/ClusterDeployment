@@ -14,17 +14,11 @@ Bubble is a social media website which allows users, who sign-up for free profil
 Enter the 4th generation of Bubble. This latest generation implements SRE practices, including defining SLOs, monitoring metrics, and building a CI/CD pipeline. In addition to hosting and tetsing the previously made Bubble application, the SRE batch streamlined the app to be available for constant monitoring and updating. This generation also involved a twist in which another team (Team Magma) disrupted the Aqua Bubble Monitoring app. This readme details the technologies used in order for Team Aqua to diagnose issues with their application and restore it back to health.
 
 
-## Installation
+## Installation (languages and servers)
 
 * Java
    * Install [Java](https://www.java.com/en/download/manual.jsp)
-* Jenkins
-  * Install [Docker](http://docker.com)
-  * Install Jenkins in Docker
-     > docker run -d -p 8080:8080 -p 50000:50000 jenkins/jenkins
-  * Install admin
-     > docker exec -t -i (image name) cat/var/jenkins/home/secrets/initialAdminPassword
-  * Install suggested plugins
+   
 * Angular 4
   * Install [NodeJS](https://nodejs.org/en/)
   * Install the CLI using the npm package manager:
@@ -36,8 +30,14 @@ Enter the 4th generation of Bubble. This latest generation implements SRE practi
 * EC2/EKS cluster
    * Create a
 
+## Installation (pipeline and monitoring)
+
+* Jenkins
+   * Install(https://www.Jenkins.io/doc/book/installing/kubernetes)
+   * Create persistent volume on website  
+   
 * Helm Repo/Chart installation:
-   * Prometheus-
+   * Prometheus
       >  Repo: helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
    * Chart: helm install my-prometheus prometheus-community/prometheus --version 15.8.5
       > Configurations:
