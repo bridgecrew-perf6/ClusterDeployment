@@ -1,16 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: bubble-frontend-service
-  namespace: team-aqua
   labels:
-    app: bubble-frontend
+    app: frontend-service 
+  name: frontend-service
 spec:
-  selector:
-    app: bubble-frontend
+  type: LoadBalancer
   ports:
-  - port: 8080
-    targetPort: 8080
+  - port: 80
     protocol: TCP
-    name: http
-  type: NodePort
+  selector:
+      app: bubble-frontend
+
