@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: bubble-backend-deployment
-  # namespace: team-aqua
   labels:
     app: bubble-backend
 spec:
@@ -23,7 +22,7 @@ spec:
     spec:
       containers:
       - name: bubble-backend-container
-        image: archieaqua/bubble-b:test
+        image: archieaqua/bubble-b:latest
         resources:
           requests:
             memory: "512Mi"
