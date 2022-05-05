@@ -1,23 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bubble-frontend-deployment
-  labels: 
-    app: bubble-frontend
+  name: frontend
 spec:
   selector:
     matchLabels:
-      app: bubble-frontend
+      app: bubble
+      tier: frontend
+      track: stable
+  replicas: 1
   template:
     metadata:
       labels:
-        app: bubble-frontend
+        app: bubble
+        tier: frontend
+        track: stable
     spec:
+      nodeSelector:
+        name: w1
       containers:
-      - name: bubble-frontend-container
-        image: archieaqua/bubble-f:latest
-        resources:
-          limits: 
-            memory: "512Mi" 
-        ports:
-        - containerPort: 80
+        - name: nginx
+          image: "fentrymartin7/bubble-front:latest"
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/usr/sbin/nginx","-s","quit"]

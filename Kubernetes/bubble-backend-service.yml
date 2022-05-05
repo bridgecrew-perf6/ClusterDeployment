@@ -1,14 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: bubble-backend-service
-  labels:
-    app: bubble-backend
+  name: bubble
 spec:
   selector:
-    app: bubble-backend
+    app: bubble
+    tier: backend
   ports:
-  - port: 5000
+  - protocol: TCP
+    port: 5000
     targetPort: 5000
-    protocol: TCP
-    name: http
+  type: LoadBalancer

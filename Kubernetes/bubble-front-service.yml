@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: frontend-service 
-  name: frontend-service
+  name: frontend
 spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-    protocol: TCP
   selector:
-      app: bubble-frontend
+    app: bubble
+    tier: frontend
+  ports:
+  - protocol: "TCP"
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
 
