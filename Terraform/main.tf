@@ -77,7 +77,7 @@ resource "aws_iam_user_policy" "eks" {
           "eks:DescribeCluster"
         ]
         Effect   = "Allow"
-        Resource = "*"
+        Resource = module.eks.cluster_arn
       },
     ]
   })
