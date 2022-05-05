@@ -19,7 +19,7 @@ spec:
       nodeSelector:
         name: w1
       containers:
-      - name: bubble-backend-container
+      - name: bubble #bubble-backend-container
         image: archieaqua/bubble-b:latest
         resources:
           requests:
