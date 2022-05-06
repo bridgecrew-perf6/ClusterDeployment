@@ -670,7 +670,7 @@ grafana:
   persistence:
     type: pvc
     enabled: true
-    storageClassName: graf-pv
+    storageClassName: gp2
     accessModes:
       - ReadWriteOnce
     size: 4Gi
@@ -2458,11 +2458,11 @@ prometheus:
     ##
      volumeClaimTemplate:
        spec:
-         storageClassName: prom-pv
+         storageClassName: gp2
          accessModes: ["ReadWriteOnce"]
          resources:
            requests:
-             storage: 8Gi
+             storage: 20Gi
       #  selector: {}
 
     ## Using tmpfs volume
