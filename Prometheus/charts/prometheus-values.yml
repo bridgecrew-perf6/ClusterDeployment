@@ -667,12 +667,24 @@ grafana:
   ##
   defaultDashboardsTimezone: utc
 
-  adminPassword: archiepass
-
-  rbac:
-    ## If true, Grafana PSPs will be created
-    ##
-    pspEnabled: false
+  persistence:
+    type: pvc
+    enabled: true
+    storageClassName: graf-pv
+    accessModes:
+      - ReadWriteOnce
+    size: 4Gi
+    # annotations: {}
+    finalizers:
+      - kubernetes.io/pvc-protection
+    # selectorLabels: {}
+    # subPath: ""
+    # existingClaim:
+  
+  admin:
+    existingSecret: grafana-secret
+    userKey: admin-user
+    passwordKey: admin-password
 
   ingress:
     ## If true, Grafana Ingress will be created
@@ -765,23 +777,24 @@ grafana:
 
   ## Configure additional grafana datasources (passed through tpl)
   ## ref: http://docs.grafana.org/administration/provisioning/#datasources
-  additionalDataSources: []
+  additionalDataSources:
   # - name: prometheus-sample
-  #   access: proxy
-  #   basicAuth: true
+  #   access: server
+  #   basicAuth: false
   #   basicAuthPassword: pass
-  #   basicAuthUser: daco
+  #   basicAuthUser: user1
   #   editable: false
   #   jsonData:
   #       tlsSkipVerify: true
   #   orgId: 1
-  #   type: prometheus
-  #   url: https://{{ printf "%s-prometheus.svc" .Release.Name }}:9090
+  #   type: loki
+  #   url: https://loki-stack.{{ .Release.Namespace }}:3100/
   #   version: 1
 
   ## Passed to grafana subchart and used by servicemonitor below
   ##
   service:
+    type: LoadBalancer
     portName: http-web
 
   serviceMonitor:
@@ -2440,17 +2453,17 @@ prometheus:
     ## Prometheus StorageSpec for persistent data
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/storage.md
     ##
-    storageSpec: {}
+    storageSpec:
     ## Using PersistentVolumeClaim
     ##
-    #  volumeClaimTemplate:
-    #    spec:
-    #      storageClassName: gluster
-    #      accessModes: ["ReadWriteOnce"]
-    #      resources:
-    #        requests:
-    #          storage: 50Gi
-    #    selector: {}
+     volumeClaimTemplate:
+       spec:
+         storageClassName: prom-pv
+         accessModes: ["ReadWriteOnce"]
+         resources:
+           requests:
+             storage: 8Gi
+      #  selector: {}
 
     ## Using tmpfs volume
     ##
