@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  labels:
-    app: frontend #added missing label
 spec:
   selector:
     matchLabels:
@@ -21,9 +19,7 @@ spec:
       nodeSelector:
         name: w1
       containers:
-        - name: frontend # nginx
+        - name: nginx
           image: "fentrymartin7/bubble-front:latest"
-          lifecycle:
-            preStop:
-              exec:
-                command: ["/usr/sbin/nginx","-s","quit"]
+          ports:
+            - containerPort: 80

@@ -29,7 +29,8 @@ spec:
             memory: "512Mi"
             # cpu: "500m"
         ports:
-        - containerPort: 5000
+        - name: http
+          containerPort: 5000
         env:
           - name: DB_URL
             valueFrom:
