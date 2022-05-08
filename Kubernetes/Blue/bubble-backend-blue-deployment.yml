@@ -1,12 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: backend-blue
+  namespace: blue
 spec:
   selector:
     matchLabels:
       app: bubble
       tier: backend
+      color: blue
       track: stable
   replicas: 1
   template:
@@ -14,13 +16,14 @@ spec:
       labels:
         app: bubble
         tier: backend
+        color: blue
         track: stable
     spec:
       nodeSelector:
         name: w1
       containers:
       - name: bubble #bubble-backend-container
-        image: archieaqua/bubble-b:latest
+        image: "archieaqua/bubble-b:latest"
         resources:
           requests:
             memory: "512Mi"
