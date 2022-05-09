@@ -7,7 +7,29 @@ Team Aqua's Bubble application provisions an EKS (Elastic Kubernetes Cluster), a
 ## Instructions
 
 Step 1: Configure Credentials
-  * In AWS configure credentials to have full access. 
+ * In AWS you will need to configure IAM credentials to have full access. 
+  * Step a: To configure a new user go AWS > Services > IAM > Users > Add users
+   *  Step b: Set user details: [give a username]
+   *  Step c: Select accesss type: Access key - Programmatic access
+   *  Step d: Set permissions > Attach existing policies directly
+       *  add the following:
+         * AmazonEC2FullAccess
+         * IAMFullAccess
+         * AWSCloudFormationFullAccess
+         * EKSFullAccess 
+       	   * This is a custom permision. 
+       	   * Go IAM > Policies > Create policy
+       	     * Service: EKS  
+       	     * Actions: All EKS actions
+       	     * Resoucres: All resources
+       	     * No Conditions
+       	     * name: EKSFullAccess
+       	     * Add tags as wanted
+       	   * Go IAM > Users > Attach existing policy
+       	   * Add EKSFullAccess
+       	   
+   * Step e: Add tags as wanted
+   * step f: Create user
   
   
 Step 2: Run scripts
