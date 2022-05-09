@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-blue
-  namespace: blue
+  name: backend-green
+  # namespace: green
 spec:
   selector:
     matchLabels:
       app: bubble
       tier: backend
-      color: blue
+      color: green
       track: stable
   replicas: 1
   template:
@@ -16,7 +16,7 @@ spec:
       labels:
         app: bubble
         tier: backend
-        color: blue
+        color: green
         track: stable
     spec:
       nodeSelector:

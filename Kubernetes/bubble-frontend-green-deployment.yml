@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-blue
-  namespace: blue
+  name: frontend-green
+  # namespace: green
 spec:
   selector:
     matchLabels:
       app: bubble
       tier: frontend
-      color: blue
+      color: green
       track: stable
   replicas: 1
   template:
@@ -16,13 +16,13 @@ spec:
       labels:
         app: bubble
         tier: frontend
-        color: blue
+        color: green
         track: stable
     spec:
       nodeSelector:
         name: w1
       containers:
         - name: nginx
-          image: "archieaqua/bubble-f:test.bg"
+          image: "archieaqua/bubble-f:test.bg1"
           ports:
             - containerPort: 80

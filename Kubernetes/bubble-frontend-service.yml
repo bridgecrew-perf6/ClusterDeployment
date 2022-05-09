@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend-blue
-  namespace: blue
+  name: frontend
+  # namespace: blue
 spec:
+  type: LoadBalancer
   selector:
     app: bubble
     tier: frontend
-    color: blue
+    color: green
   ports:
   - protocol: TCP
     port: 80
