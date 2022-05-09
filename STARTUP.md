@@ -29,8 +29,7 @@ Enter the 4th generation of Bubble. This latest generation implements SRE practi
 * Terraform
    * How to get started with Terraform (https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started)
    * Building Terraform Infrastructure (https://learn.hashicorp.com/tutorials/terraform/aws-build?in=terraform/aws-get-started)
-         
-	 * For detailed information for Team Aqua's Bubble terraform scripts (https://github.com/revature-bubble3-devops-team-1/ClusterDeployment/new/main)
+         * For detailed information for Team Aqua's Bubble terraform scripts (https://github.com/revature-bubble3-devops-team-1/ClusterDeployment/blob/main/TF_README.md)
    
 ## Installation (pipeline and monitoring)
 
