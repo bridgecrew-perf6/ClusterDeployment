@@ -2,9 +2,11 @@
 
 ## Getting Started
 
+Team Aqua's Bubble application provisions an EKS (Elastic Kubernetes Cluster), an RDS (Relational Database Service), and a VPC (virtual private cloud). In this documentation you will find a breakdown of the necessary terraform scripts needed in order to host the Bubble application.
+
 ## EKS
 
 ## RDS
 
-##VPC
+## VPC
 
