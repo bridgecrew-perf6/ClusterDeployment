@@ -8,7 +8,7 @@ spec:
   selector:
     app: bubble
     tier: backend
-    color: blue
+    color: green
   ports:
   - protocol: TCP
     port: 80
