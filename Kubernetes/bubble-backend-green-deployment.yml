@@ -1,28 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bubble-backend-deployment
-  labels:
-    app: bubble-backend
+  name: backend-green
+  # namespace: green
 spec:
-  replicas: 1
-  # minReadySeconds: 5
-  # strategy: 
-  #   type: blue
-  #   rollingUpdate:
-  #     maxSurge: 1
-  #     maxUnavailable: 0
   selector:
     matchLabels:
-      app: bubble-backend
+      app: bubble
+      tier: backend
+      color: green
+      track: stable
+  replicas: 1
   template:
     metadata:
       labels:
-        app: bubble-backend
+        app: bubble
+        tier: backend
+        color: green
+        track: stable
     spec:
+      nodeSelector:
+        name: w1
       containers:
-      - name: bubble-backend-container
-        image: archieaqua/bubble-b:latest
+      - name: bubble #bubble-backend-container
+        image: "archieaqua/bubble-b:latest"
         resources:
           requests:
             memory: "512Mi"
@@ -31,7 +32,8 @@ spec:
             memory: "512Mi"
             # cpu: "500m"
         ports:
-        - containerPort: 5000
+        - name: http
+          containerPort: 5000
         env:
           - name: DB_URL
             valueFrom:
