@@ -9,14 +9,17 @@ Team Aqua's Bubble application provisions an EKS (Elastic Kubernetes Cluster), a
 Step 1: Configure Credentials
   * In AWS configure credentials to have full access. 
   
+  
 Step 2: Run scripts
   * In your terminal run the following commands:
     > Terraform init
     > Terraform plan
     > Terraform apply
     
+    
 Step 3: Provide database username and password
   * provide database username and database password when prompted.
+  
   
 Step 4: Get Access keys and database endpoint
   * Run the command below to get your IAM credentials for the kubernetes cluster.
