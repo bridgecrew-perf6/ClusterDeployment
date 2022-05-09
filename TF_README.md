@@ -4,7 +4,7 @@
 
 Team Aqua's Bubble application provisions an EKS (Elastic Kubernetes Cluster), an RDS (Relational Database Service), and a VPC (virtual private cloud) from Amazon Web Services. In this documentation you will find a breakdown of the necessary steps needed in order to get the Bubble application hosted.
 
-## Instructions
+## Configuring IAM Credentials
 
 Step 1: Configure Credentials
  * In AWS you will need to configure IAM credentials to have full access. 
@@ -16,6 +16,7 @@ Step 1: Configure Credentials
          * AmazonEC2FullAccess
          * IAMFullAccess
          * AWSCloudFormationFullAccess
+         * AmazonRDSFullAccess
          * EKSFullAccess 
        	   * This is a custom permision. 
        	   * Go IAM > Policies > Create policy
@@ -30,10 +31,13 @@ Step 1: Configure Credentials
        	   
    * Step e: Add tags as wanted
    * step f: Create user
+ 
+## Configuring Secrets
+* secrets will need to be configured in order to get credentials for the RDS and for email verification.
   
   
 Step 2: Run scripts
-  * In your terminal run the following commands:
+  * In the terminal run the following commands in the same folder as the terraform scripts:
     > Terraform init
     
     > Terraform plan
@@ -47,10 +51,44 @@ Step 3: Provide database username and password
   
 Step 4: Get Access keys and database endpoint
   * Run the command below to get your IAM credentials for the kubernetes cluster.
+  * AWS configure on any machnine that needs to access the cluster.
     > terraform output user_access_keys
    
   * Run the next command to get the URL for your database
     > terraform output database_endpoint
+  
+  
+## Configuring Secrets
+
+* Secret.yml files will need to be configured for the RDS and email verification
+* Add the following code to your secret.yml file
+
+> apiVersion: v1
+
+> kind: Secret
+
+> metadata:
+
+  > name: bubble-secret
+  
+> type: Opaque
+
+> stringData:
+
+  > db-url: jdbc:postgresql://[DATABASE URL]:5432/bubbledb
+  
+  > db-username: [DATABASE USERNAME]
+  
+  > db-password: [DATABASE PASSWORD]
+  
+  > email-address: [EMAIL ADDRESS]@gmail.com
+  
+  > email-password: [EMAIL PASSWORD]
+ 
+ 
+ * Run following command to apply to terrafrom script (make sure you are in the right namspace)
+ 
+ > kubectl apply --secret.yml
   
 
 
