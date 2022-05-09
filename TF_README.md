@@ -13,7 +13,9 @@ Step 1: Configure Credentials
 Step 2: Run scripts
   * In your terminal run the following commands:
     > Terraform init
+    
     > Terraform plan
+    
     > Terraform apply
     
     
