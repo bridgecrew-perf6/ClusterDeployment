@@ -14,7 +14,7 @@ Bubble is a social media website which allows users, who sign-up for free profil
 Enter the 4th generation of Bubble. This latest generation implements SRE practices, including defining SLOs, monitoring metrics, and building a CI/CD pipeline. In addition to hosting and tetsing the previously made Bubble application, the SRE batch streamlined the app to be available for constant monitoring and updating. This generation also involved a twist in which another team (Team Magma) disrupted the Aqua Bubble Monitoring app. This readme details the technologies used in order for Team Aqua to diagnose issues with their application and restore it back to health.
 
 
-## Installation (languages and servers)
+## Installation (languages)
 
 * Java
    * Install [Java](https://www.java.com/en/download/manual.jsp)
@@ -23,13 +23,14 @@ Enter the 4th generation of Bubble. This latest generation implements SRE practi
   * Install [NodeJS](https://nodejs.org/en/)
   * Install the CLI using the npm package manager:
      > npm install -g @angular/cli@12
-* AWS RDS
-   * Fleshhhhhh ~~~~ this out please.
-   * Postgres Pod configiuration
-      >
-* EC2/EKS cluster
-   * Create a
 
+## Terraform (scripts)
+
+* Terraform
+   * How to get started with Terraform (https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started)
+   * Building Terraform Infrastructure (https://learn.hashicorp.com/tutorials/terraform/aws-build?in=terraform/aws-get-started)
+         * For detailed information for Team Aqua's Bubble terraform build (https://github.com/revature-bubble3-devops-team-1/ClusterDeployment/new/main)
+   
 ## Installation (pipeline and monitoring)
 
 * Jenkins
