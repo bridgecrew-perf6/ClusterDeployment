@@ -63,32 +63,32 @@ Step 4: Get Access keys and database endpoint
 * Secret.yml files will need to be configured for the RDS and email verification
 * Add the following code to your secret.yml file
 
-> apiVersion: v1
+  > apiVersion: v1
 
-> kind: Secret
+  > kind: Secret
 
-> metadata:
+  > metadata:
 
-  > name: bubble-secret
+    > name: bubble-secret
   
-> type: Opaque
+  > type: Opaque
 
-> stringData:
+  > stringData:
 
-  > db-url: jdbc:postgresql://[DATABASE URL]:5432/bubbledb
+    > db-url: jdbc:postgresql://[DATABASE URL]:5432/bubbledb
   
-  > db-username: [DATABASE USERNAME]
+    > db-username: [DATABASE USERNAME]
   
-  > db-password: [DATABASE PASSWORD]
+    > db-password: [DATABASE PASSWORD]
   
-  > email-address: [EMAIL ADDRESS]@gmail.com
+    > email-address: [EMAIL ADDRESS]@gmail.com
   
-  > email-password: [EMAIL PASSWORD]
+    > email-password: [EMAIL PASSWORD]
  
  
- * Run following command to apply to terrafrom script (make sure you are in the right namspace)
+* Run following command to apply to terrafrom script (make sure you are in the right namspace)
  
- > kubectl apply --secret.yml
+   > kubectl apply --secret.yml
   
 
 
