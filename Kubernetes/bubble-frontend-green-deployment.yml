@@ -23,6 +23,6 @@ spec:
         name: w1
       containers:
         - name: nginx
-          image: "archieaqua/bubble-f:test.bg"
+          image: "archieaqua/bubble-f:0.2"
           ports:
             - containerPort: 80

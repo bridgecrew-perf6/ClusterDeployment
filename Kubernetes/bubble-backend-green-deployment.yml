@@ -23,7 +23,7 @@ spec:
         name: w1
       containers:
       - name: bubble #bubble-backend-container
-        image: "archieaqua/bubble-b:latest"
+        image: "archieaqua/bubble-b:test.log"
         resources:
           requests:
             memory: "512Mi"
