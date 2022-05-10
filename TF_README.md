@@ -57,33 +57,32 @@ Step 4: Get Access keys and database endpoint
   * Run the next command to get the URL for your database
     > terraform output database_endpoint
   
+
+Step 5: Next a Secret.yml files will need to be configured
+
+  * Add the following code to your secret.yml file
+
+    > apiVersion: v1
+
+    > kind: Secret
+
+    > metadata:
+
+      > name: bubble-secret
   
-## Configuring Secrets
+    > type: Opaque
 
-* Secret.yml files will need to be configured for the RDS and email verification
-* Add the following code to your secret.yml file
+    > stringData:
 
-  > apiVersion: v1
-
-  > kind: Secret
-
-  > metadata:
-
-    > name: bubble-secret
+      > db-url: jdbc:postgresql://[DATABASE URL]:5432/bubbledb
   
-  > type: Opaque
-
-  > stringData:
-
-    > db-url: jdbc:postgresql://[DATABASE URL]:5432/bubbledb
+      > db-username: [DATABASE USERNAME]
   
-    > db-username: [DATABASE USERNAME]
+      > db-password: [DATABASE PASSWORD]
   
-    > db-password: [DATABASE PASSWORD]
+      > email-address: [EMAIL ADDRESS]@gmail.com
   
-    > email-address: [EMAIL ADDRESS]@gmail.com
-  
-    > email-password: [EMAIL PASSWORD]
+      > email-password: [EMAIL PASSWORD]
  
  
 * Run following command to apply to terrafrom script (make sure you are in the right namspace)
