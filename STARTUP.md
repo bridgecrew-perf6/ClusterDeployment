@@ -52,6 +52,7 @@ Enter the 4th generation of Bubble. This latest generation implements SRE practi
 
 * Prometheus Adapter/metrics API
   * repo: helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+  
         * (For further documentation: https://grafana.com/docs/grafana/latest/getting-started/getting-started-prometheus/)
   
 * Helm repo update
