@@ -48,10 +48,9 @@ Enter the 4th generation of Bubble. This latest generation implements SRE practi
          > prometheus.io/scrape: "true"
          > prometheus.io/path: *application pod serving metrics*
          > prometheus.io/port: "8080"
-         > 
-* Metrics API(K8's)
 
-* Prometheus Adapter
+
+* Prometheus Adapter/metrics API
   * repo: helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
   
 * Helm repo update
