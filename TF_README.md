@@ -51,14 +51,14 @@ Step 3: Provide database username and password
   
 Step 4: Get Access keys and database endpoint
   * Run the command below to get your IAM credentials for the kubernetes cluster.
-  * AWS configure on any machnine that needs to access the cluster.
+  * AWS configure on any machine that needs to access the cluster.
     > terraform output user_access_keys
    
   * Run the next command to get the URL for your database
     > terraform output database_endpoint
   
 
-Step 5: Next a Secret.yml files will need to be configured
+Step 5: Next a Secret.yml file will need to be configured
 
   * Add the following code to your secret.yml file
 
